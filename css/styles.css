@@ -355,6 +355,7 @@ background-color: rgb(10, 10, 10, 0);
 min-width: 358px;
 min-height: 50px;
 padding: 15px;
+color: rgba(255, 255, 255, 0.6);
 }
 
 .form-input::placeholder {
@@ -697,7 +698,6 @@ padding: 15px;
 .clients-link:focus,
 .clients-link:hover {
   fill: var(--hover-icon-bg);
-  /* border-color: var(--hover-icon-bg); */
 }
 
 /* страница Портфолио*/
@@ -866,22 +866,39 @@ box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
 0px 1px 1px rgba(0, 0, 0, 0.14),
 0px 2px 1px rgba(0, 0, 0, 0.2);
 border-radius: 4px;
+padding: 40px;
 }
 
+/*----------exit btn------------*/
 .exit-btn {
   position: absolute;
   top: 8px;
   right: 8px;
   width: 30px;
   height: 30px;
-  background: var(--primary-bg);
+  background: var(--primary-bg); 
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   border-radius: 50%;
-  cursor: pointer;
-  background-image: url(../images/modal-close.svg);
-  background-repeat: no-repeat;
-  background-position: center;
+  cursor: pointer; 
+    
+  display: flex;
+  align-items: flex-end;  
+  justify-content: center;  
+
+  transition-property: fill;
+  transition-duration: var(--time-duration);
+  transition-timing-function: var(--time-fun);
+}
+
+.exit-btn-icon{
+  height: 18px;
+  width: 18px;
+}
+
+.exit-btn-icon:hover,
+.exit-btn-icon:focus{
+fill: var(--hover-icon-bg); 
 }
 
 .text-modal{
@@ -892,15 +909,13 @@ border-radius: 4px;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--primary-txt);
-  padding: 40px 40px 12px 40px;
-  margin-bottom: 0;
+  margin-bottom: 12px;
 }
 
 .form-label-modal {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 0 40px 10px 40px;
 }
 
 .label-text-modal{
@@ -909,13 +924,14 @@ font-size: 12px;
 line-height: 1.16;
 letter-spacing: 0.01em;
 color: var(--secondary-txt);
-padding-bottom: 4px;
+margin-bottom: 4px;
 }
 
 .icon-mod{
 position:absolute;
-bottom: 12px;
-left: 12px;
+transform: translate(-50%, -50%);
+bottom: 18px;
+left: 21px;
 
 transition-property: fill;
 transition-duration: var(--time-duration);
@@ -928,6 +944,7 @@ height: 40px;
 border: 1px solid rgba(33, 33, 33, 0.2);
 box-sizing: border-box;
 border-radius: 4px;
+margin-bottom: 10px;
 padding-left: 42px;
 transition-property: border-color;
 transition-duration: var(--time-duration);
@@ -940,8 +957,6 @@ fill: var(--hover-icon-bg);
 
 .form-label-modal:focus-within>.form-input-modal {
   border: 1px solid var(--main-btn-bg);
-  box-sizing: border-box;
-  border-radius: 4px;
 }
 
 .form-input-modal.textarea{
@@ -958,7 +973,7 @@ fill: var(--hover-icon-bg);
   letter-spacing: 0.01em;
 }
 
-.form-input-modal.textarea:placeholder-shown {
+.form-input-modal.textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
 
@@ -966,7 +981,7 @@ fill: var(--hover-icon-bg);
 .checkbox-label-modal {
   white-space: nowrap;
   display: block;
-  margin: 10px 40px 30px 77px;
+  margin: 0 0 30px 31px;
   cursor: pointer;
   position: relative;
 }
@@ -979,8 +994,8 @@ fill: var(--hover-icon-bg);
 
 .checkbox-icon {
   position: absolute;
-  left: -10px;
-  bottom: 0;
+  left: -14px;
+  bottom: -2px;
   transform: translate(-50%, -50%);
   
   display: inline-block;
@@ -1031,6 +1046,7 @@ fill: var(--hover-icon-bg);
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
+  border: none;
  
   transition-property: background-color, box-shadow;
   transition-duration: var(--time-duration);
