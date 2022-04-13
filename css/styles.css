@@ -89,7 +89,7 @@ img {
 
 input,
 textarea {
-  outline: none;
+  outline: transparent;
 }
 
 textarea {
@@ -896,8 +896,8 @@ padding: 40px;
   width: 18px;
 }
 
-.exit-btn-icon:hover,
-.exit-btn-icon:focus{
+.exit-btn:hover .exit-btn-icon,
+.exit-btn:focus .exit-btn-icon{
 fill: var(--hover-icon-bg); 
 }
 
